@@ -1,10 +1,14 @@
 define([], function()
 {
-    var node = docuemnt.createElement('div')
-    return {
-        getNode:function()
-        {
-            return node
-        }
+    var me = function()
+    {
+        this.node = document.createElement('div')
     }
+
+    me.prototype.getNode = function()
+    {
+        return this.node
+    }
+
+    return me
 })

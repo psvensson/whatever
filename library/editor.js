@@ -1,4 +1,4 @@
-define(['ace-panel', 'inevent-panel', 'outevents-panel'], function(aced, inp, outps)
+define(['ace-panel', 'inevent-panel', 'outevents-panel'], function(Aced, Inp, Outps)
 {
     var editor = undefined
     return {
@@ -36,6 +36,9 @@ define(['ace-panel', 'inevent-panel', 'outevents-panel'], function(aced, inp, ou
                 el.style.bottom = 0;
                 el.style.left = 0;
                 document.head.appendChild(rscript);
+                inp = new Inp()
+                aced = new Aced()
+                outps = new Outps()
                 el.appendChild(inp.getNode())
                 el.appendChild(aced.getNode())
                 el.appendChild(outps.getNode())
