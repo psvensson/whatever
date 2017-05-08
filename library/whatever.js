@@ -7,12 +7,20 @@ var require =
     callback: function()
     {
         console.log('*** r loaded')
-        requirejs.config({ baseUrl: 'library' , paths:{ace: '//cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/'}})
+        requirejs.config(
+            {
+                baseUrl: 'library' ,
+                paths:
+                {
+                    ace: '//cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/'
+                }
+            })
         navigator.serviceWorker.register('library/service-worker.js', {
             scope: './library/'
         });
         require(['editor'], function(editor)
         {
+            document.body.appendChild(editor.getEditor())
             console.log('*** editor loaded')
             editor.show()
         })
