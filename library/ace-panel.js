@@ -1,10 +1,14 @@
-define(['ace/ace'], function(ed)
+define(['aceditor/ace'], function(ed)
 {
+    console.log('ace-panel Ace is')
+  console.dir(ed)
     var me = function()
     {
         this.node = document.createElement('div')
+        this.node.style = 'width:500px;height:400px;'
         this.node.id = "ace-panel_editor"
         this.editor = undefined
+
     }
 
     me.prototype.getNode = function()
@@ -12,13 +16,14 @@ define(['ace/ace'], function(ed)
         return this.node
     }
 
-    me.prototype.getEditor = function()
+    me.prototype.getAceEditor = function()
     {
         if(!this.editor)
         {
-            this.editor = ace.edit("ace-panel_editor");
-            this.editor.setTheme("ace/theme/monokai");
-            this.editor.getSession().setMode("ace/mode/javascript");
+            console.log('ace-panel creating editor')
+            this.editor = ed.edit("ace-panel_editor");
+            this.editor.setTheme("aceditor/theme/monokai");
+            this.editor.getSession().setMode("aceditor/mode/javascript");
         }
         return this.editor
     }

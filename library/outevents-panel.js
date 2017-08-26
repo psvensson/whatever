@@ -25,6 +25,7 @@ define(['tim'], function(tim)
 
     me.prototype.render = function()
     {
+        console.log('outevents-panel rendering')
         this.node.innerHTML = tim(template, this)
     }
 

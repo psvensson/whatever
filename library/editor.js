@@ -9,6 +9,7 @@ define(['ace-panel', 'inevent-panel', 'outevents-panel'], function(Aced, Inp, Ou
             if(editor.style.display == 'none')
             {
                 editor.style.display = 'flex'
+              this.aced.getAceEditor()
             }
         },
 
@@ -38,6 +39,7 @@ define(['ace-panel', 'inevent-panel', 'outevents-panel'], function(Aced, Inp, Ou
                 document.head.appendChild(rscript);
                 inp = new Inp()
                 aced = new Aced()
+                this.aced = aced
                 outps = new Outps()
                 el.appendChild(inp.getNode())
                 el.appendChild(aced.getNode())
