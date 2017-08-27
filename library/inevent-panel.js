@@ -6,6 +6,7 @@ define(['tim'], function(tim)
     {
         this.event = false
         this.node = document.createElement('div')
+        this.node.innerHTML = 'inevent panel (replace me)'
         this.render()
     }
 
